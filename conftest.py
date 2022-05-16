@@ -1,11 +1,10 @@
 import pytest
-from _pytest.main import Session
 
 from step import Step
 
 
 @pytest.hookimpl(trylast=True)
-def pytest_sessionstart(session: Session):
+def pytest_sessionstart(session: pytest.Session):
     pytestconfig = session.config
 
     # Initialize 'Step' plugin
